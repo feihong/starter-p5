@@ -34,12 +34,11 @@ app.get('/example/:name', async (req, res) => {
     res.render('example.html', {example: req.params.name})
   } catch (err) {
     if (err.code === 'ENOENT') {
-      res.status(404).send('No page found')
+      res.status(404).send('No such example found')
     }
   }
 })
 
-// listen for requests :)
 const listener = app.listen(process.env.PORT || 8000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
 })
