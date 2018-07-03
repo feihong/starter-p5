@@ -3,6 +3,9 @@
 {% block title %}Example: {{ example }}{% endblock %}
 
 {% block extrascript %}
+{% for es in extraLibs %}
+  <script src="{{ es }}"></script>
+{% endfor %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 <script src="/examples/{{ example }}"></script>
 {% endblock %}

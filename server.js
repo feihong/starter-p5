@@ -1,4 +1,9 @@
 const examplesDir = './public/examples/'
+const extraLibs = {
+  'falling-emojis.js': [
+    'https://cdn.jsdelivr.net/npm/emojione@3.1.6/lib/js/emojione.min.js'
+  ]
+}
 
 const path = require('path')
 const fs = require('fs-extra')
@@ -10,8 +15,8 @@ const app = express()
 app.use(express.static('public'))
 
 nunjucks.configure('templates', {
-  autoescape: true,
   express: app,
+  autoescape: true,
   noCache: true,
 })
 
@@ -29,9 +34,14 @@ app.get('/', async (req, res) => {
 
 app.get('/example/:name', async (req, res) => {
   try {
-    let path_ = path.join('./public/examples', req.params.name)
+    let example = req.params.name
+    let path_ = path.join('./public/examples', example)
     let file = await fs.stat(path_)
-    res.render('example.html', {example: req.params.name})
+    res.render('example.html', {
+      example,
+      extraLibs: extraLibs[example],
+    })
+    console.log(extraLibs[example]);
   } catch (err) {
     if (err.code === 'ENOENT') {
       res.status(404).send('No such example found')
