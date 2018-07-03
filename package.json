@@ -20,6 +20,6 @@
     "node",
     "glitch",
     "express",
-    "p5"
+    "p5.js"
   ]
 }
