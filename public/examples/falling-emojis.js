@@ -1,8 +1,9 @@
+// Create an array of emojis, ignoring flag emojis because they are boring.
 const candidates =
   Object.keys(emojione.emojioneList)
-  .map(k => emojione.emojioneList[k])
-  .filter(item => item.category !== 'flags')
-  .map(item => emojione.convert(item.uc_output))
+    .map(k => emojione.emojioneList[k])
+    .filter(item => item.category !== 'flags')
+    .map(item => emojione.convert(item.uc_output))
 
 let emojis = []
 let paused = false
@@ -31,7 +32,8 @@ function setup() {
     if (paused) return
 
     emojis = [
-      ...emojis.filter(e => e.y < height + 10),
+      // Delete emojis that have gone off the screen.
+      ...emojis.filter(e => e.y < height + 40),
       newEmojiItem()
     ]
   }, 1000)
@@ -42,6 +44,7 @@ function draw() {
 
   background('lightblue')
 
+  // Make all emojis fall down a little.
   for (let emoji of emojis) {
     emoji.y += 1
     text(emoji.val, emoji.x, emoji.y)
