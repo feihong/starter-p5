@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Example: {{ example }}{% endblock %}
+
+{% block extrascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+<script src="/examples/{{ example }}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Example: {{ example }}</h1>
+{% endblock %}
