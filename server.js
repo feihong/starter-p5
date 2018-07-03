@@ -1,3 +1,5 @@
+const examplesDir = './public/examples/'
+
 const path = require('path')
 const fs = require('fs-extra')
 const glob = require('glob')
@@ -12,8 +14,6 @@ nunjucks.configure('templates', {
   express: app,
   noCache: true,
 })
-
-const examplesDir = './public/examples/'
 
 async function getExamples() {
   return new Promise(resolve => {

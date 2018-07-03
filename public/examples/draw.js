@@ -18,7 +18,7 @@ function mouseMoved() {
   d = (d > 20) ? 20 : d   // cap at 20
   strokeWeight(d)
 
-  hueValue = (hueValue + 0.5) % 360
+  hueValue = (hueValue + 1) % 360
   stroke(hueValue, 80, 100)
 
   line(pmouseX, pmouseY, mouseX, mouseY)
