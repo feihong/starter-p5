@@ -1,25 +1,37 @@
-let emojis = [
-  {
-    val: '👊',
-    x: 100,
-    y: -10,
+const candidates =
+  Object.keys(emojione.emojioneList)
+  .map(k => emojione.emojioneList[k])
+  .filter(item => item.category !== 'flags')
+  .map(item => emojione.convert(item.uc_output))
+
+function getRandomEmoji() {
+  let index = Math.floor(random(0, candidates.length))
+  return candidates[index]
+}
+
+let emojis = []
+
+function newEmojiItem() {
+  return {
+    val: getRandomEmoji(),
+    x: random(0, width - 40),
+    y: -10
   }
-]
+}
 
 function setup() {
   createCanvas(720, 320)
+  textSize(64)
 
-  textSize(48)
+  emojis = [newEmojiItem()]
+
+  // Add a new emoji every second.
   window.setInterval(() => {
     emojis = [
       ...emojis.filter(e => e.y < height + 10),
-      {
-        val: '👊',
-        x: random(0, width - 15),
-        y: -10
-      }
+      newEmojiItem()
     ]
-    console.log(emojis.length);
+    // console.log(emojis.length);
   }, 1000)
 }
 
