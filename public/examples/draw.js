@@ -1,6 +1,6 @@
 /*
 
-Press x to clear the canvas
+Press `x` to clear the canvas
 
 */
 let hueValue = 180

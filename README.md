@@ -18,6 +18,10 @@ const extraLibs = {
 
 The configuration above will cause the emojione library to be loaded along with the `falling-emojis.js` example.
 
+## Markdown descriptions
+
+If an example file begins with a multiline comment, the contents of the comment will be rendered above the canvas using [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis).
+
 ## Prerequisites for local development
 
     yarn global add nodemon

@@ -36,8 +36,8 @@ function getExamples() {
 }
 
 function getDescription(text) {
-  // Get the contents of the first multiline comment (everything between /* and */)
-  let groups = /\/\*([\s\S]*?)\*\//m.exec(text)
+  // Get the contents of the top multiline comment (everything between /* and */)
+  let groups = /^\/\*([\s\S]*?)\*\//.exec(text.trim())
   if (groups === null) {
     return ''
   } else {

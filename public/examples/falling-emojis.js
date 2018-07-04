@@ -1,6 +1,6 @@
 /*
 
-Press p to pause/unpause
+Press `p` to pause/unpause
 
 */
 
