@@ -1,3 +1,9 @@
+/*
+
+Press p to pause/unpause
+
+*/
+
 // Create an array of emojis, ignoring flag emojis because they are boring.
 const candidates =
   Object.keys(emojione.emojioneList)

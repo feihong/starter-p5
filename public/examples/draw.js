@@ -1,8 +1,13 @@
+/*
+
+Press x to clear the canvas
+
+*/
 let hueValue = 180
 
 function setup() {
   createCanvas(500, 500)
-  background('ivory')
+  background('snow')
   colorMode(HSB)
 }
 
@@ -11,9 +16,9 @@ function draw() {
 
 // Putting this code inside of draw() won't work.
 function mouseMoved() {
-  var dx = abs(mouseX - pmouseX)
-  var dy = abs(mouseY - pmouseY)
-  var d = sqrt(sq(dx) + sq(dy))
+  let dx = abs(mouseX - pmouseX)
+  let dy = abs(mouseY - pmouseY)
+  let d = sqrt(sq(dx) + sq(dy))
 
   d = (d > 20) ? 20 : d   // cap at 20
   strokeWeight(d)
@@ -26,6 +31,6 @@ function mouseMoved() {
 
 function keyPressed() {
   if (key === 'X') {
-    background('ivory')
+    background('snow')
   }
 }
