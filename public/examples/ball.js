@@ -1,11 +1,3 @@
-/*
-
-This **multiline comment** will `be displayed` on the example page. You can use
-the [Markdown language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-here and _it will be rendered to HTML_. <span style='color:olive'>Hooray!</span>
-
-*/
-
 let y = 200
 let x = 300
 let radius = 50
